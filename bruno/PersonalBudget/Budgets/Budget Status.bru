@@ -1,0 +1,23 @@
+meta {
+  name: Budget Status
+  type: http
+  seq: 3
+}
+
+get {
+  url: {{baseUrl}}/api/budgets/:category/status?yearMonth=2026-08
+  body: none
+  auth: none
+}
+
+params:query {
+  yearMonth: 2026-08
+}
+
+params:path {
+  category: groceries
+}
+
+docs {
+  yearMonth is optional and defaults to the current month if omitted.
+}

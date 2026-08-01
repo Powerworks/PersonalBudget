@@ -1,0 +1,29 @@
+meta {
+  name: Create Expense
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{baseUrl}}/api/transactions
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "type": "EXPENSE",
+    "amount": 150.00,
+    "category": "groceries",
+    "description": "big shop",
+    "occurredOn": "2026-08-01"
+  }
+}
+
+docs {
+  Records an expense entry. If a budget exists for the same category
+  (see Budgets > Create or Update Budget) and this pushes spend past
+  the monthly limit, the budget module publishes BudgetExceeded
+  internally — check the app logs, or GET Budgets > Budget Status
+  afterwards to see the updated spend.
+}

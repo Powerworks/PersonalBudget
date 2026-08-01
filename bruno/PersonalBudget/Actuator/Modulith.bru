@@ -1,0 +1,17 @@
+meta {
+  name: Modulith
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{baseUrl}}/actuator/modulith
+  body: none
+  auth: none
+}
+
+docs {
+  Shows the detected module graph and, crucially, that budget and
+  summary depend on transaction only via EVENT_LISTENER — proof that
+  cross-module communication is event-based, not direct calls.
+}

@@ -1,0 +1,16 @@
+meta {
+  name: Balance
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/api/summary/balance
+  body: none
+  auth: none
+}
+
+docs {
+  Running account balance, maintained by the summary module purely by
+  reacting to TransactionRecorded events from the transaction module.
+}

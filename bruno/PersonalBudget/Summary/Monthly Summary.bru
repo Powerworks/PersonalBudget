@@ -1,0 +1,15 @@
+meta {
+  name: Monthly Summary
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{baseUrl}}/api/summary/monthly/:yearMonth
+  body: none
+  auth: none
+}
+
+params:path {
+  yearMonth: 2026-08
+}
