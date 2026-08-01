@@ -1,0 +1,26 @@
+spring:
+  application:
+    name: budget
+
+  sql:
+    init:
+      mode: always
+
+  modulith:
+    events:
+      jdbc:
+        schema-initialization:
+          enabled: true
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics,modulith
+  endpoint:
+    health:
+      show-details: when-authorized
+
+logging:
+  level:
+    org.springframework.modulith: INFO
